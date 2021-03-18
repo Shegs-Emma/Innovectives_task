@@ -187,6 +187,7 @@
     left: 10px;
     color: white;
     padding: 5px 0;
+    cursor: pointer;
 }
 
 .Inner1 span:nth-child(1) {
@@ -213,6 +214,7 @@
     left: 10px;
     color: purple;
     padding: 5px 0;
+    cursor: pointer;
 }
 
 .Inner2 span:nth-child(1) {
