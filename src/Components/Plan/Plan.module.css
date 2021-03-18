@@ -1,0 +1,346 @@
+.Summary {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.Top {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 9%;
+    padding-left: 8%;
+}
+
+.Back {
+    display:flex;
+    flex-direction: row;
+}
+
+.Back span {
+    color: #AF0059;
+    position: relative;
+    top: -3px;
+    margin-left: 2px;
+}
+
+.Steps {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    margin-left: 18%;
+}
+
+.Steps hr {
+    width: 100%;
+    height: 2px;
+    background-color: #CBCBCB;
+}
+
+.Steps hr:nth-child(2) {
+    width: 100%;
+    height: 2px;
+    background-color: #FF005E;
+    border: 1px solid #FF005E;
+}
+
+.Steps div {
+    background-color: #CBCBCB;
+    border-radius: 50%;
+    width: 40%;
+    text-align: center;
+    color: white;
+    font-size: small;
+}
+
+.Steps div:nth-child(1) {
+    background-color: #FF005E;
+}
+
+.Steps div:nth-child(3) {
+    background-color: #FF005E;
+}
+
+.Bottom {
+    position: relative;
+    top: -20px;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 20px;
+}
+
+.PlanText {
+    position: relative;
+    left: -30px;
+}
+
+.PlanText p, .BreakdownText p {
+    color: purple;
+    font-size: large;
+    font-weight: bold;
+}
+
+.BreakdownText {
+    margin-top: 50px;
+    position: relative;
+    left: -30px;
+}
+
+.Roof, .Roof2, .Roof3, .Roof4, .Roof5, .Roof1 {
+    width: 60%;
+    height: 10px;
+    margin-left: 5%;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Roof {
+    background-color: #FE5151;
+}
+
+.Roof1 {
+    background-color: #FF51F3;
+}
+
+.Roof2 {
+    background-color: #6751FF;
+}
+
+.Roof3 {
+    background-color: #51FFED;
+}
+
+.Roof4 {
+    background-color: #FFAE51;
+}
+
+.Roof5 {
+    background-color: #6DFF51;
+}
+
+.Body {
+    width: 60%;
+    height: 70px;
+    margin-left: 5%;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Calendar {
+    height: 90px;
+    width: 95%;
+    padding-left: 4%;
+}
+
+.Date1 {
+    margin-left: 3%;
+    width: 20%;
+}
+
+.Date2 {
+    position: relative;
+    left: 17%;
+    top: -150px;
+    width: 20%;
+}
+
+.Date3 {
+    position: relative;
+    left: 31.5%;
+    top: -300px;
+    width: 20%;
+}
+
+.Date4 {
+    position: relative;
+    left: 46%;
+    top: -450px;
+    width: 20%;
+}
+
+.Date5 {
+    position: relative;
+    left: 60.5%;
+    top: -600px;
+    width: 20%;
+}
+
+.Date6 {
+    position: relative;
+    left: 75%;
+    top: -750px;
+    width: 20%;
+}
+
+.Inner1 {
+    display: flex;
+    flex-direction: column;
+    background: #7b4397;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #dc2430, #7b4397);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #dc2430, #7b4397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 54%;
+    height: 60px;
+    justify-content: space-between;
+    border-radius: 10px;
+    position: relative;
+    top: -73px;
+    left: 10px;
+    color: white;
+    padding: 5px 0;
+}
+
+.Inner1 span:nth-child(1) {
+    font-size: x-small;
+}
+
+.Inner1 span:nth-child(2) {
+    font-size: 30px;
+}
+
+.Inner1 span:nth-child(3) {
+    font-size: x-small;
+}
+
+.Inner2 {
+    display: flex;
+    flex-direction: column;
+    width: 54%;
+    height: 60px;
+    justify-content: space-between;
+    border-radius: 10px;
+    position: relative;
+    top: -73px;
+    left: 10px;
+    color: purple;
+    padding: 5px 0;
+}
+
+.Inner2 span:nth-child(1) {
+    font-size: x-small;
+}
+
+.Inner2 span:nth-child(2) {
+    font-size: 30px;
+}
+
+.Inner2 span:nth-child(3) {
+    font-size: x-small;
+}
+
+
+.DetailsDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35%;
+    height: 120px;
+    text-align: left;
+    color: purple;
+    border-right: 1px solid gray;
+    margin: 30px 0;
+}
+
+.DetailsPrices {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+    height: 120px;
+    text-align: right;
+    color: purple;
+    margin: 30px 0;
+}
+
+.DetailsContainer {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    width: 74%;
+    margin-left: 8%;
+    padding: 0 20px;
+}
+
+.Naira {
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.Naira input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #720056;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(247, 30, 174, 0.19);
+    border-radius: 2px;
+    color: #720056;
+    font-weight: bold;
+}
+
+.Naira input:active, .Naira input:focus {
+    outline: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid #fff;
+}
+
+.NairaSign {
+    background-color: white;
+    font-size: x-large;
+    padding: 2px 8px;
+    color: #720056;
+}
+
+.Update {
+    background: #7b4397;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #dc2430, #7b4397);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #dc2430, #7b4397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: relative;
+    left: 4%;
+    width: 45%;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.Custom {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    text-align: center;
+    margin: 15px 0 10px 15%;
+}
+
+.Custom span {
+    font-size: 13px;
+    color: white;
+}
+
+.Button {
+    position: relative;
+    border: 1px solid white;
+    width: 80%;
+    padding: 10px 20px;
+    background: #7b4397;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #dc2430, #7b4397);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #dc2430, #7b4397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-align: center;
+    color: white;
+    border-radius: 50px;
+    font-size: small;
+    font-family: 'Quicksand', sans-serif;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Button:hover, .Button:active {
+    border: 1px solid #e21661;
+    color: white;
+    outline: none;
+}
+
+.MyButton {
+    width: 100%;
+    margin-top: 40px;
+}
