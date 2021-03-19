@@ -4,9 +4,7 @@ import Plan from '../../Components/Plan/Plan';
 
 const Breakdown = ({ show }) => {
     const handleShowing = (bool) => {
-
         show(bool);
-
     }
 
     return (

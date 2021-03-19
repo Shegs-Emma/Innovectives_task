@@ -6,9 +6,9 @@ const Wrapper = () => {
     const [ showPayment, setShowPayment ] = useState(false);
 
     const showComp = (foo) => {
-
         setShowPayment(foo);
     }
+
 
     let showItem = showPayment ? <Breakdown show={showComp} /> : <Payment show={showComp} />;
 

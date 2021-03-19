@@ -136,3 +136,15 @@
 .PriceDiv p:nth-child(2) {
     font-weight: bold;
 }
+
+
+@media (min-width: 850px) and (max-width: 1050px) {
+    .LogoWing {
+        width: 40%;
+        
+    }
+    
+    .OrderWing {
+        width: 60%;
+    }
+}

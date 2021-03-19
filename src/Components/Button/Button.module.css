@@ -21,3 +21,17 @@
     color: white;
     outline: none;
 }
+
+
+
+@media (min-width: 850px) and (max-width: 1050px) {
+    .Button {
+        font-size: smaller;
+    }
+}
+
+@media (max-width: 849px) {
+    .Button {
+        font-size: smaller;
+    }
+}

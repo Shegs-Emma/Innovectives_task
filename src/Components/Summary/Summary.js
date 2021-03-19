@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './Summary.module.css';
 import img from '../../assets/undraw_Designer_by46.svg';
 import img2 from '../../assets/undraw_working_remotely_jh40.svg';
@@ -8,6 +8,7 @@ import { faCalendarAlt, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import Button from '../Button/Button';
+import axios from 'axios';
 
 
 const Summary = ({ show }) => {
@@ -19,6 +20,24 @@ const Summary = ({ show }) => {
     const [ job, setJob ] = useState('');
     const [ amount, setAmount ] = useState();
     const [ loan, setLoan ] = useState('');
+    const [ details, setDetails ] = useState();
+
+    useEffect(() => {
+        const getResponse = () => {
+            axios.post('http://localhost:3001/', details)
+            .then(res => {
+                console.log(res)
+                show(true);
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
+
+        if (details) {
+            getResponse();
+        }
+    }, [details, show])
 
 
     const toggleDate = () => {
@@ -78,11 +97,8 @@ const Summary = ({ show }) => {
             loan
         }
 
-        console.log(payDetails);
-    }
-
-    const handleRedirect = () => {
-        show(true);
+        setDetails(payDetails);
+        
     }
 
     let datePicker = viewDate ? <DatePicker selected={selectedDate} onChange={date => setSelectedDate(date)} className={classes.DateP} /> : null;
@@ -146,7 +162,7 @@ const Summary = ({ show }) => {
                         </label>
                     </div>
                 </div>
-                <Button clicked={handleRedirect} />
+                <Button />
             </form>
         </div>
     )

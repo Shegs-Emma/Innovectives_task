@@ -5,10 +5,9 @@ import Summary from '../../Components/Summary/Summary';
 const Payment = ({ show }) => {
 
     const handleShowing = (bool) => {
-
         show(bool)
-
     }
+
 
     return (
         <div className={classes.Payment}>

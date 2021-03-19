@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './Plan.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faCheck } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button/Button';
+import axios from 'axios';
 
 const Plan = ({ show }) => {
     const [ aggressive, setAggressive ] = useState(true);
@@ -11,6 +12,39 @@ const Plan = ({ show }) => {
     const [ casual, setCasual ] = useState(false);
     const [ mild, setMild ] = useState(false);
     const [ gentle, setGentle ] = useState(false);
+    const [ breakDetails, setBreakDownDetails ] = useState({
+        shoppingCredit: 45000,
+        minDownPayment: 21000
+    });
+    const [ monthlyInst, setMonthlyInst ] = useState('25,000');
+    const [ month, setMonth ] = useState(1);
+    const [ inputValue, setInputValue ] = useState({ updateValue: '' });
+    const [ newDownPay, setNewDownPay ] = useState('');
+    const [ ready, setReady ] = useState(false);
+
+    useEffect(() => {
+        setReady(false);
+
+        const getResponse = () => {
+            const myDetails = {
+                breakDetails,
+                month
+            }
+
+            axios.post('http://localhost:3001/break', myDetails)
+            .then(res => {
+                setMonthlyInst(res.data);
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
+
+        if (ready) {
+            getResponse();
+        }
+        
+    }, [ready, breakDetails, month])
 
     const toggleSelected = (plan) => {
         if (plan === 'aggr') {
@@ -20,6 +54,8 @@ const Plan = ({ show }) => {
             setCasual(false);
             setMild(false);
             setGentle(false);
+
+            setMonth(1)
         }
 
         if (plan === 'stre') {
@@ -29,6 +65,8 @@ const Plan = ({ show }) => {
             setCasual(false);
             setMild(false);
             setGentle(false);
+
+            setMonth(2)
         }
 
         if (plan === 'focus') {
@@ -38,6 +76,8 @@ const Plan = ({ show }) => {
             setCasual(false);
             setMild(false);
             setGentle(false);
+
+            setMonth(3)
         }
 
         if (plan === 'casual') {
@@ -47,6 +87,8 @@ const Plan = ({ show }) => {
             setCasual(true);
             setMild(false);
             setGentle(false);
+
+            setMonth(4)
         }
 
         if (plan === 'mild') {
@@ -56,6 +98,8 @@ const Plan = ({ show }) => {
             setCasual(false);
             setMild(true);
             setGentle(false);
+
+            setMonth(5)
         }
 
         if (plan === 'gentle') {
@@ -65,16 +109,41 @@ const Plan = ({ show }) => {
             setCasual(false);
             setMild(false);
             setGentle(true);
+
+            setMonth(6)
         }
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const updateBreakDetails = {
+            ...breakDetails
+        }
+
+        updateBreakDetails.minDownPayment = newDownPay;
+        setBreakDownDetails({minDownPayment: updateBreakDetails.minDownPayment, shoppingCredit: 45000,});
+
+        setReady(true);
     }
 
     const handleRedirect = (e) => {
         show(false);
     }
+
+    const handleChange = (event) => {
+        setInputValue({
+            [event.target.name]: event.target.value
+        });
+    }
+
+    const handleUpdate = (event) => {
+        if (event.keyCode === 13) {
+            setNewDownPay(event.target.value);
+            setInputValue({ updateValue: '' });
+        }
+    }
+
 
     return (
         <div className={classes.Summary}>
@@ -93,7 +162,7 @@ const Plan = ({ show }) => {
                     <div>4</div>
                 </div>
             </div>
-            <form onSubmit={handleSubmit} className={classes.Bottom}>
+            <div className={classes.Bottom}>
                 <div>
                     <div className={classes.PlanText}>
                         <p>Choose Your Plan</p>
@@ -177,27 +246,32 @@ const Plan = ({ show }) => {
                         <div>Tenure</div>
                     </div>
                     <div className={classes.DetailsPrices}>
-                        <div>&#8358; 45,000</div>
-                        <div>&#8358; 21,000</div>
-                        <div>&#8358; 25,000</div>
-                        <div>1 month</div>
+                        <div>&#8358; {breakDetails ? breakDetails.shoppingCredit : ''}</div>
+                        <div>&#8358; {breakDetails ? breakDetails.minDownPayment: ''}</div>
+                        <div>&#8358; {monthlyInst}</div>
+                        <div>{`${month} month(s)`}</div>
                     </div>
-                    <div className={classes.Update}>
+                    <form onSubmit={handleSubmit} className={classes.Update}>
                         <div className={classes.Custom}>
                             <span>Customize</span>
                             <span>Down Payment</span>
                         </div>
                         <div className={classes.Naira}>
                             <div className={classes.NairaSign}>&#8358;</div>
-                            <input type='text' />
+                            <input 
+                                type='text'
+                                name='update' 
+                                value={inputValue.updateValue} 
+                                onChange={handleChange}
+                                onKeyDown={handleUpdate}  />
                         </div>
                         <div className={classes.MyButton}>
                             <button className={classes.Button}>Update Breakdown</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <Button />
-            </form>
+            </div>
         </div>
     )
 }

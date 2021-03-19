@@ -3,3 +3,9 @@
   flex-direction: row;
 }
 
+@media (max-width: 849px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
+}
