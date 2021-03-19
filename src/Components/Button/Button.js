@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from './Button.module.css';
 
-const Button = () => {
+const Button = (props) => {
     return (
         <div>
-            <button className={classes.Button}>Continue</button>
+            <button onClick={props.clicked} className={classes.Button}>Continue</button>
         </div>
     )
 }

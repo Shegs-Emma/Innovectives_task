@@ -10,12 +10,16 @@ import "react-datepicker/dist/react-datepicker.css";
 import Button from '../Button/Button';
 
 
-const Summary = () => {
+const Summary = ({ show }) => {
     const [ selectedDate, setSelectedDate ] = useState(new Date());
     const [ viewDate, setViewDate ] = useState(false);
     const [ paid, setPaid ] = useState(true);
     const [ home, setHome ] = useState(false);
     const [ corporate, setCorporate ] = useState(false);
+    const [ job, setJob ] = useState('');
+    const [ amount, setAmount ] = useState();
+    const [ loan, setLoan ] = useState('');
+
 
     const toggleDate = () => {
         let date = viewDate ? false : true;
@@ -26,22 +30,59 @@ const Summary = () => {
     const toggleSelected = (title) => {
 
         if(title === 'paid'){
-            setPaid(true)
-            setHome(false)
-            setCorporate(false)
+            
+            setPaid(true);
+            setHome(false);
+            setCorporate(false);
+
+            setJob('Paid Employment');
+            
         } 
 
         if(title === 'home'){
             setPaid(false)
             setCorporate(false)
-            setHome(true)
+            setHome(true);
+
+            setJob('Self Employed / Freelance');
         } 
 
         if(title === 'corp'){
             setHome(false)
             setPaid(false)
             setCorporate(true)
+
+            setJob('Corporate Organization');
         }
+    }
+
+    const handleChange = (e) => {
+        const yourPay = e.target.value;
+
+        setAmount(yourPay);
+    }
+
+    const handleRadio = (e) => {
+        const checked = e.target.value;
+
+        setLoan(checked);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const payDetails = {
+            job,
+            amount,
+            selectedDate,
+            loan
+        }
+
+        console.log(payDetails);
+    }
+
+    const handleRedirect = () => {
+        show(true);
     }
 
     let datePicker = viewDate ? <DatePicker selected={selectedDate} onChange={date => setSelectedDate(date)} className={classes.DateP} /> : null;
@@ -59,7 +100,7 @@ const Summary = () => {
                     <div>4</div>
                 </div>
             </div>
-            <form className={classes.Bottom}>
+            <form onSubmit={handleSubmit} className={classes.Bottom}>
                 <div className={classes.What}>
                     <p>What Do You Do?</p>
                 </div>
@@ -81,13 +122,13 @@ const Summary = () => {
                     <p>How much do you get paid monthly?</p>
                     <div className={classes.Naira}>
                         <div className={classes.NairaSign}>&#8358;</div>
-                        <input type='text' name="amount" />
+                        <input type='text' name="amount" onChange={handleChange} />
                     </div>
                 </div>
                 <div className={classes.Date}>
                     <p>When is your next salary date?</p>
                     <div className={classes.DatePicker}>
-                        <FontAwesomeIcon icon={faCalendarAlt} color='#720056' size="0.5x" onClick={toggleDate} />
+                        <FontAwesomeIcon icon={faCalendarAlt} color='#720056' size="1x" onClick={toggleDate} />
                         <span>{viewDate ? datePicker : 'Select pay date'}</span>
                         <FontAwesomeIcon icon={faChevronDown} size="xs"  onClick={toggleDate} />
                     </div>
@@ -96,16 +137,16 @@ const Summary = () => {
                     <p>Do you have any existing loan(s)?</p>
                     <div className={classes.LoanPicker}>
                         <label className={classes.Radio}>
-                            <input type='radio' name='loan' id='yes' value='yes' />
+                            <input type='radio' name='loan' id='yes' value='yes' onChange={handleRadio} />
                             <span> Yes </span>
                         </label>
                         <label className={classes.Radio}>
-                            <input type='radio' name='loan' id='no' value='no' />
+                            <input type='radio' name='loan' id='no' value='no' onChange={handleRadio} />
                             <span> No </span>
                         </label>
                     </div>
                 </div>
-                <Button />
+                <Button clicked={handleRedirect} />
             </form>
         </div>
     )

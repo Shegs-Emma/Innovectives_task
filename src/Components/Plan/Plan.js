@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faCheck } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button/Button';
 
-const Plan = () => {
+const Plan = ({ show }) => {
     const [ aggressive, setAggressive ] = useState(true);
     const [ stretching, setStretching ] = useState(false);
     const [ focused, setFocused ] = useState(false);
@@ -68,12 +68,20 @@ const Plan = () => {
         }
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
+    const handleRedirect = (e) => {
+        show(false);
+    }
+
     return (
         <div className={classes.Summary}>
             <div className={classes.Top}>
                 <div className={classes.Back}>
-                    <FontAwesomeIcon icon={faArrowLeft} color='#AF0059' />
-                    <span>Back</span>
+                    <FontAwesomeIcon icon={faArrowLeft} color='#AF0059' onClick={handleRedirect} />
+                    <span onClick={handleRedirect}>Back</span>
                 </div>
                 <div className={classes.Steps}>
                     <div><FontAwesomeIcon icon={faCheck} /></div>
@@ -85,7 +93,7 @@ const Plan = () => {
                     <div>4</div>
                 </div>
             </div>
-            <form className={classes.Bottom}>
+            <form onSubmit={handleSubmit} className={classes.Bottom}>
                 <div>
                     <div className={classes.PlanText}>
                         <p>Choose Your Plan</p>
