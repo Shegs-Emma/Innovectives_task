@@ -24,7 +24,8 @@ const Summary = ({ show }) => {
 
     useEffect(() => {
         const getResponse = () => {
-            axios.post('http://localhost:3001/', details)
+            // axios.post('http://localhost:3001/api/', details)
+            axios.post('https://payqart-task.herokuapp.com/api/', details)
             .then(res => {
                 console.log(res)
                 show(true);

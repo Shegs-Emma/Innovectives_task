@@ -31,7 +31,8 @@ const Plan = ({ show }) => {
                 month
             }
 
-            axios.post('http://localhost:3001/break', myDetails)
+            // axios.post('http://localhost:3001/api/break', myDetails)
+            axios.post('https://payqart-task.herokuapp.com/api/break', myDetails)
             .then(res => {
                 setMonthlyInst(res.data);
             })
