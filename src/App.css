@@ -3,6 +3,37 @@
   flex-direction: row;
 }
 
+.logo {
+  width: 172px;
+  height: 38px;
+  margin: 3rem 0 0 3.5rem;
+  opacity: 1;
+}
+
+.sample {
+  width: 35px;
+  height: 35px;
+  opacity: 1;
+  border-radius: 50%;
+  margin: auto 0;
+}
+
+.chev {
+  margin: auto 0;
+  color: #0D1F5F;
+}
+
+.phone {
+  width: 40%;
+}
+
+.pie {
+  margin: auto 0;
+  width: 19px;
+  height: 19px;
+  color: #ffffff;
+}
+
 @media (max-width: 849px) {
   .App {
     display: flex;

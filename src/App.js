@@ -1,12 +1,10 @@
 import './App.css';
-import Order from './Containers/Order/Order';
-import Wrapper from './Containers/Wrapper/Wrapper';
+import Landing from "./Containers/Landing";
 
 function App() {
   return (
     <div className="App">
-      <Order />
-      <Wrapper />
+      <Landing />
     </div>
   );
 }
