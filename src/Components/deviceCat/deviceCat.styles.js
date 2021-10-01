@@ -7,9 +7,13 @@ const DeviceCategoryCon = styled.div`
 
 const DeviceBody = styled.div`
     margin-top: 1rem;
-    padding-left: 3rem;
+    padding-left: 1rem;
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 52em) {
+        padding-left: 3rem;
+    }
 `;
 
 const Categories = styled.div`
@@ -21,22 +25,31 @@ const SpanCate = styled.div`
 `;
 
 const DeviceSelect = styled.div`
-    width: 63%;
+    width: 90%;
     height: 190px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 8px 16px #0000000A;
     border-radius: 8px;
     opacity: 1;
-    padding-left: 2rem;
+    padding-left: 1rem;
     display: flex;
     flex-direction: column;
     margin: 3rem 0;
+
+    @media (min-width: 52em) {
+        width: 63%;
+        padding-left: 2rem;
+    }
 `;
 
 const Devices = styled.div`
-    width: 85%;
+    width: 97%;
     display: flex;
     justify-content: space-between;
+
+    @media (min-width: 52em) {
+        width: 85%;
+    }
 `;
 
 const Device = styled.div`

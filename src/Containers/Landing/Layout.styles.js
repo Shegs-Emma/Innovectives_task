@@ -9,11 +9,21 @@ const LandingContainer = styled.div`
 `;
 
 const DashNav = styled.div`
-    width: 22%;
+    display: none;
+
+    @media (min-width: 52em) {
+        display: block;
+        width: 22%;
+    }
 `;
 
 const DashB = styled.div`
-    width: 78%;
+    width: 100%;
+
+    @media (min-width: 52em) {
+        display: block;
+        width: 78%;
+    }
 `;
 
 export {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FiPhoneCall, FiChevronDown } from "react-icons/fi";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { Span } from "../typography";
 import {
     Nav,
@@ -7,7 +8,8 @@ import {
     Support,
     Profile,
     ProfileItems,
-    NavContainer
+    NavContainer,
+    Logo
 } from "./navbar.styles";
 
 const Navbar = () => {
@@ -16,7 +18,11 @@ const Navbar = () => {
     return (
         <Nav>
             <NavContainer>
+                    <Logo>
+                        <GiHamburgerMenu size="1.5em" className="burger" />
+                    </Logo>
                 <NavItems>
+                    
                     <Support>
                         <FiPhoneCall className="chev" />
                         <Span nav>Support</Span>

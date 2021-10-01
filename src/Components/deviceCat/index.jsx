@@ -22,8 +22,7 @@ const DeviceCategory = () => {
 
     const history = useHistory();
 
-    const routeChange = () =>{ 
-        console.log("i was clicked");
+    const routeChange = () =>{
         let path = `/`; 
         history.push(path);
     };
