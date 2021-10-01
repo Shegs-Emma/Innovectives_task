@@ -7,9 +7,13 @@ const DashboardCont = styled.div`
 
 const DashBody = styled.div`
     margin-top: 1rem;
-    padding-left: 3rem;
+    padding-left: 1rem;
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 52em) {
+        padding-left: 3rem;
+    }
 `;
 
 const ActiveLoans = styled.div`
@@ -19,10 +23,15 @@ const ActiveLoans = styled.div`
     box-shadow: 0px 8px 16px #0000000A;
     border-radius: 8px;
     opacity: 1;
-    padding-left: 2rem;
+    padding-left: 0.5rem;
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
+
+    @media (min-width: 52em) {
+        width: 94%;
+        padding-left: 2rem;
+    }
 `;
 
 const LoanItems = styled.div`
@@ -35,20 +44,33 @@ const LoanItems = styled.div`
 `;
 
 const EmptyDivs = styled.div`
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
     width: 97%;
-    justify-content: space-between;
+    
+
+    @media (min-width: 52em) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 `;
 
 const EmptyDiv = styled.div`
-    width: 220px;
-    height: 210px;
+    width: 180px;
+    height: 170px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 8px 16px #0000000A;
     border-radius: 16px;
     opacity: 1;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+
+    @media (min-width: 52em) {
+        margin-bottom: 3rem;
+        width: 220px;
+        height: 210px;
+    }
 `;
 
 const EmptyItems = styled.div`
@@ -58,25 +80,36 @@ const EmptyItems = styled.div`
 `;
 
 const EmptySquare = styled.div`
-    width: 46px;
-    width: ${({ wide }) => (wide ? "90px" : "")};
-    height: 36px;
+    width: 36px;
+    width: ${({ wide }) => (wide ? "80px" : "")};
+    height: 26px;
     background: #D3DFEA 0% 0% no-repeat padding-box;
     background: ${({ wide }) => (wide ? "#D3DFEA24 0% 0% no-repeat padding-box" : "")};
     border: ${({ wide }) => (wide ? "1px solid #D2DFE9" : "")};
     border-radius: 8px;
     opacity: 1;
     margin-bottom: 1.5rem;
+
+    @media (min-width: 52em) {
+        width: 46px;
+        height: 36px;
+        width: ${({ wide }) => (wide ? "90px" : "")};
+    }
 `;
 
 const EmptyRec = styled.div`
-    width: 90px;
-    width: ${({ next }) => (next ? "152px" : "")};
+    width: 80px;
+    width: ${({ next }) => (next ? "132px" : "")};
     height: 0px;
     border: 3px solid #D3DFEA;
     border-radius: 4px;
     opacity: 1;
     margin-bottom: 1.5rem;
+
+    @media (min-width: 52em) {
+        width: 90px;
+        width: ${({ next }) => (next ? "152px" : "")};
+    }
 `;
 
 const DevL = styled.div`

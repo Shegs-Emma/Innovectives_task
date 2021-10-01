@@ -42,7 +42,18 @@
 }
 
 .phone {
-  width: 40%;
+  width: 30%;
+}
+
+@media (min-width: 52em) {
+  .phone {
+    width: 40%;
+  }
+}
+
+.burger {
+  margin: 0.8rem 1rem;
+  color: #0D1F5F;
 }
 
 .pie {

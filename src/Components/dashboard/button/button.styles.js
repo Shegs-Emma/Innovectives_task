@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const ButtonContain = styled.button`
-    width: 170px;
-    width: ${({ dev, sub }) => (dev || sub ? "123px" : "")};
-    width: ${({ pur }) => (pur ? "92px" : "")};
+    width: 150px;
+    width: ${({ dev, sub }) => (dev || sub ? "113px" : "")};
+    width: ${({ pur }) => (pur ? "52px" : "")};
     width: ${({ bac }) => (bac ? "72px" : "")};
     height: 35px;
-    height: ${({ dev }) => (dev ? "50px" : "")};
-    height: ${({ pur }) => (pur ? "36px" : "")};
+    height: ${({ dev }) => (dev ? "40px" : "")};
+    height: ${({ pur }) => (pur ? "26px" : "")};
     margin-top: ${({ dev }) => (dev ? "2rem" : "")};
     background: #0D1F5F 0% 0% no-repeat padding-box;
     background: ${({ dev, pur, bac }) => (dev || pur|| bac ? "#D3DFEA24 0% 0% no-repeat padding-box" : "")};
@@ -26,8 +26,18 @@ const ButtonContain = styled.button`
     opacity: 1;
     display: ${({ dev }) => (dev ? "flex" : "")};
     justify-content: center;
-    padding-top: ${({ dev }) => (dev ? "1rem" : "")};
+    padding-top: ${({ dev }) => (dev ? "0.5rem" : "")};
     cursor: pointer;
+
+    @media (min-width: 52em) {
+        width: 170px;
+        height: 35px;
+        width: ${({ dev, sub }) => (dev || sub ? "123px" : "")};
+        height: ${({ dev }) => (dev ? "50px" : "")};
+        padding-top: ${({ dev }) => (dev ? "1rem" : "")};
+        width: ${({ pur }) => (pur ? "92px" : "")};
+        height: ${({ pur }) => (pur ? "36px" : "")};
+    }
 `;
 
 export {

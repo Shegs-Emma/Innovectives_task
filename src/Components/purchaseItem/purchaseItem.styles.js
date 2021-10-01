@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const MobileLoan = styled.div`
-    width: 63%;
+    width: 88%;
     height: 200px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 8px 16px #0000000A;
@@ -11,13 +11,21 @@ const MobileLoan = styled.div`
     display: flex;
     flex-direction: column;
     margin: 3rem 0;
+
+    @media (min-width: 52em) {
+        width: 63%;
+    }
 `;
 
 const PurchaseButtons = styled.div`
     display: flex;
     margin-top: 1rem;
-    width: 35%;
+    width: 55%;
     justify-content: space-between;
+
+    @media (min-width: 52em) {
+        width: 35%;
+    }
 `;
 
 export {

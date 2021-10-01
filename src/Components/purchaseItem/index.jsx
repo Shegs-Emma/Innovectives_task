@@ -20,8 +20,7 @@ const PurchaseItem = () => {
 
     const history = useHistory();
 
-    const routeChange = () =>{ 
-        console.log("i was clicked");
+    const routeChange = () =>{
         let path = `cat`; 
         history.push(path);
     };
@@ -52,7 +51,7 @@ const PurchaseItem = () => {
 
                 <MobileLoan>
                     <H2 selD>Mobile Device Loan - Samsung Galaxy Note 9</H2>
-                    <Span>Render here the form of CowriesMFB for the loan</Span>
+                    <Span selD>Render here the form of CowriesMFB for the loan</Span>
                     <PurchaseButtons>
                         <Button sub>Submit</Button>
                         <Button bac>Back</Button>
