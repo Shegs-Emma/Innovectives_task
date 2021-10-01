@@ -16,7 +16,7 @@ import {
 import { P, Span } from "../typography";
 
 
-const Dashboard = () => {
+const Dashboard = ({ landing }) => {
     return (
         <DashboardContainer>
             {/* The Logo div */}
@@ -45,7 +45,7 @@ const Dashboard = () => {
             </EmptyItm>
 
             {/* The Loan Div */}
-            <LoanCont>
+            <LoanCont landing={landing}>
                 <AnyRow loan>
                     <FiPieChart className="pie" />
                     <P>Loans</P>

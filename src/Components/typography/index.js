@@ -5,6 +5,12 @@ const H2 = styled.h2`
     letter-spacing: 0px;
     color: #0A194E;
     opacity: 1;
+    font: ${({ sel }) => ( sel ? "normal normal 600 24px Nunito" : "")};
+    font: ${({ selD }) => ( selD ? "normal normal 600 15px Nunito" : "")};
+    padding-bottom: ${({ selD }) => ( selD ? "1rem" : "")};
+    margin-bottom: ${({ selD }) => ( selD ? "1rem" : "")};
+    width: ${({ selD }) => ( selD ? "96%" : "")};
+    border-bottom: 0.7px solid #DDDDDD;
 `;
 
 const P = styled.p`
@@ -37,6 +43,12 @@ const Span = styled.span`
     margin: ${({ navP }) => (navP ? "auto 0.5rem auto 1.5rem" : "")};
     margin: ${({ navPa }) => (navPa ? "0.5rem auto" : "")};
     cursor: ${({ navPa }) => (navPa ? "pointer" : "")};
+    margin: ${({ slash }) => (slash ? "0 0.5rem 0 -0.1rem" : "")};
+    font-weight: ${({ acti }) => (acti ? "bold" : "")};
+    text-decoration: ${({ sped }) => (sped ? "underline" : "")};
+    margin-left: ${({ sped }) => (sped ? "-0.1rem" : "")};
+    /* background-color: ${({ acti }) => ( acti ? "yellow" : "")}; */
+    font-weight: ${({ noa }) => (noa ? "normal" : "")};
 `;
 
 export {

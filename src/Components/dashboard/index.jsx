@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Navbar from "../navbar";
 import {
     DashboardCont,
@@ -18,6 +19,12 @@ import { AnyRow } from "../shared";
 import Button from "./button";
 
 const Dashboard = () => {
+    const history = useHistory();
+
+    const routeChange = () =>{
+        let path = `cat`; 
+        history.push(path);
+    };
 
     return (
         <DashboardCont>
@@ -93,7 +100,7 @@ const Dashboard = () => {
                             </New>
                         </DevL>
                         <H3 fro>From N 50,000 to N 500,000</H3>
-                        <Button>Explore Available Devices</Button>
+                        <Button clicked={routeChange}>Explore Available Devices</Button>
                     </EmptyItems>
                 </EmptyDiv>
             </DashBody>

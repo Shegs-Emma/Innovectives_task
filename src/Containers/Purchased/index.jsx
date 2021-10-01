@@ -3,22 +3,21 @@ import {
     LandingContainer,
     DashNav,
     DashB
-} from "./Layout.styles";
+} from "../Landing/Layout.styles";
 import Dashnav from "../../Components/dashnav";
-import Dashboard from "../../Components/dashboard";
+import PurchaseItem from "../../Components/purchaseItem";
 
-
-const Landing = () => {
+const Purchased = () => {
     return (
         <LandingContainer>
             <DashNav>
-                <Dashnav landing />
+                <Dashnav />
             </DashNav>
             <DashB>
-                <Dashboard />
+                <PurchaseItem />
             </DashB>
         </LandingContainer>
     )
 }
 
-export default Landing;
+export default Purchased;

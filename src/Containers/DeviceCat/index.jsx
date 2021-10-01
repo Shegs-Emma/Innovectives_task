@@ -3,22 +3,23 @@ import {
     LandingContainer,
     DashNav,
     DashB
-} from "./Layout.styles";
+} from "../Landing/Layout.styles";
 import Dashnav from "../../Components/dashnav";
-import Dashboard from "../../Components/dashboard";
+import DeviceCategory from "../../Components/deviceCat";
 
 
-const Landing = () => {
+const DeviceCat = () => {
     return (
         <LandingContainer>
             <DashNav>
-                <Dashnav landing />
+                <Dashnav />
             </DashNav>
             <DashB>
-                <Dashboard />
+                {/* <Dashboard /> */}
+                <DeviceCategory />
             </DashB>
         </LandingContainer>
     )
 }
 
-export default Landing;
+export default DeviceCat;

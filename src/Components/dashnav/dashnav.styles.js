@@ -47,7 +47,7 @@ const LoanCont = styled.div`
     background-color: #334585;
     border-radius: 0px 8px 8px 0px;
     opacity: 1;
-    border-left: 6px solid #3BE5BF;
+    border-left: ${({ landing }) => (landing ? "" : "6px solid #3BE5BF")};
     opacity: 1;
 `;
 
