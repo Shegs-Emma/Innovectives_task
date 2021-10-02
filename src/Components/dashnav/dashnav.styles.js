@@ -58,6 +58,17 @@ const New = styled.div`
     border-radius: 8px;
     opacity: 1;
     margin: auto 0;
+
+    @media (min-width: 52em) and (max-width: 72em){
+        width: 40px;
+        height: 21px;
+        padding-bottom: 0.5rem;
+    }
+
+    @media (min-width: 72.063em) {
+        width: 42px;
+        height: 24px;
+    }
 `;
 
 const TinyBars = styled.div`

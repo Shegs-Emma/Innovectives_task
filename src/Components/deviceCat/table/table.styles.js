@@ -10,7 +10,11 @@ const TableCont = styled.div`
     padding: 1.5rem 0;
     overflow-y: scroll;
 
-    @media (min-width: 52em) {
+    @media (min-width: 52em) and (max-width: 72em){
+        width: 95%;
+    }
+
+    @media (min-width: 72.063em) {
         width: 66%;
     }
 `;
@@ -55,6 +59,10 @@ const TD = styled.td`
     color: #0D1F5F;
     opacity: 1;
     font: normal normal normal 8px 'Nunito', sans-serif;
+
+    @media (max-width: 23.438em) {
+        font: normal normal normal 6px 'Nunito', sans-serif;
+    }
 
     @media (min-width: 52em) {
         font: normal normal normal 12px/16px 'Nunito', sans-serif;

@@ -11,16 +11,23 @@ import {
     NavContainer,
     Logo
 } from "./navbar.styles";
+import Sidenav from "../dashnav/sidenav";
 
 const Navbar = () => {
     const [ isViewing, setIsViewing ] = useState({ display: "none" });
+    const [ isClicked, setIsClicked ] = useState(false);
+
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+    }
 
     return (
         <Nav>
             <NavContainer>
-                    <Logo>
+                    <Logo onClick={() => handleClick()}>
                         <GiHamburgerMenu size="1.5em" className="burger" />
                     </Logo>
+                    {isClicked && <Sidenav />}
                 <NavItems>
                     
                     <Support>

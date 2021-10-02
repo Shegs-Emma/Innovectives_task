@@ -29,7 +29,18 @@ const NavItems = styled.div`
     margin: auto 0;
     justify-content: end;
 
-    @media (min-width: 52em) {
+    @media (max-width: 23.438em) {
+        height: 52px;
+        width: 95%;
+        margin-right: 3%;
+    }
+
+    @media (min-width: 52em) and (max-width: 72em){
+        height: 72px;
+        width: 45%;
+    }
+
+    @media (min-width: 72.063em) {
         height: 72px;
         width: 35%;
     }
@@ -64,14 +75,21 @@ const ProfileItems = styled.div`
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    width: 9%;
-    padding: 1rem;
+    width: 23%;
+    padding: 0.5rem;
     border-radius: 15px;
 
     position: absolute;
-    top: 4.2rem;
-    right: 4rem;
+    top: 3.2rem;
+    right: 2rem;
     z-index: 10;
+
+    @media (min-width: 52em) {
+        width: 9%;
+        padding: 1rem;
+        top: 4.2rem;
+        right: 4rem;
+    }
 `;
 
 const Logo = styled.div`

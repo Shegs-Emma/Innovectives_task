@@ -13,7 +13,7 @@ const H2 = styled.h2`
     border-bottom: ${({ selD }) => ( selD ? "0.7px solid #DDDDDD" : "")};
 
     @media (min-width: 52em) {
-        font: normal normal 600 32px 'Nunito';
+        font: normal normal 600 25px 'Nunito';
         font: ${({ sel }) => ( sel ? "normal normal 600 24px Nunito" : "")};
         font: ${({ selD }) => ( selD ? "normal normal 600 15px Nunito" : "")};
     }
@@ -38,7 +38,15 @@ const H3 = styled.h3`
     margin-right: 0.5rem;
     margin-top: ${({ fro }) => (fro ? "0.2rem" : "")};
 
-    @media (min-width: 52em) {
+    @media (max-width: 23.438em) {
+        font: ${({ fro }) => (fro ? "normal normal normal 9px 'Nunito'" : "")};
+    }
+
+    @media (min-width: 52em) and (max-width: 72em){
+        font: normal normal 600 12px 'Nunito';
+    }
+
+    @media (min-width: 72.063em) {
         font: normal normal 600 18px 'Nunito';
         font: ${({ fro }) => (fro ? "normal normal normal 14px 'Nunito'" : "")};
         margin-top: ${({ fro }) => (fro ? "-0.5rem" : "")};
@@ -63,7 +71,12 @@ const Span = styled.span`
     text-align: center;
     text-align: ${({ selD }) => (selD ? "left" : "")};
 
-    @media (min-width: 52em) {
+    @media (min-width: 52em) and (max-width: 72em){
+        margin: ${({ navP }) => (navP ? "auto 0.5rem auto 1.5rem" : "")};
+        font: normal normal bold 10px 'Nunito', sans-serif;
+    }
+
+    @media (min-width: 72.063em) {
         margin: ${({ navP }) => (navP ? "auto 0.5rem auto 1.5rem" : "")};
         font: normal normal bold 12px/16px 'Nunito', sans-serif;
     }

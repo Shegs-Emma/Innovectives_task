@@ -16,8 +16,8 @@ const ButtonContain = styled.button`
     box-shadow: 0px 8px 8px #00000014;
     border-radius: 8px;
     opacity: 1;
-    font-size: x-small;
-    font-size: ${({ dev }) => (dev ? "medium" : "")};
+    font-size: xx-small;
+    font-size: ${({ dev }) => (dev ? "smaller" : "")};
     font-family: 'Nunito';
     font-weight: bold;
     letter-spacing: 0px;
@@ -29,6 +29,16 @@ const ButtonContain = styled.button`
     padding-top: ${({ dev }) => (dev ? "0.5rem" : "")};
     cursor: pointer;
 
+    @media (max-width: 23.438em) {
+        width: 135px;
+        height: 35px;
+        width: ${({ dev, sub }) => (dev || sub ? "100px" : "")};
+        width: ${({ pur }) => (pur ? "50px" : "")};
+        font-size: ${({ dev }) => (dev ? "smaller" : "")};
+        width: ${({ bac }) => (bac ? "52px" : "")};
+    }
+
+
     @media (min-width: 52em) {
         width: 170px;
         height: 35px;
@@ -37,6 +47,9 @@ const ButtonContain = styled.button`
         padding-top: ${({ dev }) => (dev ? "1rem" : "")};
         width: ${({ pur }) => (pur ? "92px" : "")};
         height: ${({ pur }) => (pur ? "36px" : "")};
+        font-size: ${({ dev }) => (dev ? "medium" : "")};
+        font-size: ${({ dev }) => (dev ? "small" : "")};
+        width: ${({ bac }) => (bac ? "52px" : "")};
     }
 `;
 
