@@ -47,7 +47,7 @@ const PurchaseItem = () => {
                         </Span>
                     </SpanCate>
                 </Categories>
-                <Button dev clicked={routeChange}> <FiChevronLeft className="back" size="1.2rem" /> Go Back </Button>
+                <Button dev clicked={routeChange}> <FiChevronLeft className="back" size="1rem" /> Go Back </Button>
 
                 <MobileLoan>
                     <H2 selD>Mobile Device Loan - Samsung Galaxy Note 9</H2>

@@ -28,7 +28,12 @@ const ActiveLoans = styled.div`
     flex-direction: column;
     margin-bottom: 3rem;
 
-    @media (min-width: 52em) {
+    @media (min-width: 52em) and (max-width: 72em){
+        width: 94%;
+        padding-left: 0.8rem;
+    }
+
+    @media (min-width: 72.063em) {
         width: 94%;
         padding-left: 2rem;
     }
@@ -49,8 +54,14 @@ const EmptyDivs = styled.div`
     
     width: 97%;
     
+    @media (min-width: 52em) and (max-width: 72em){
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        
+        width: 97%;
+    }
 
-    @media (min-width: 52em) {
+    @media (min-width: 72.063em) {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -66,7 +77,18 @@ const EmptyDiv = styled.div`
     opacity: 1;
     margin-bottom: 2rem;
 
-    @media (min-width: 52em) {
+    @media (max-width: 23.438em) {
+        width: 160px;
+        height: 150px;
+    }
+
+    @media (min-width: 52em) and (max-width: 72em){
+        margin-bottom: 1rem;
+        width: 200px;
+        height: 190px;
+    }
+
+    @media (min-width: 72.063em) {
         margin-bottom: 3rem;
         width: 220px;
         height: 210px;
@@ -89,6 +111,13 @@ const EmptySquare = styled.div`
     border-radius: 8px;
     opacity: 1;
     margin-bottom: 1.5rem;
+
+    @media (max-width: 23.438em) {
+        width: 32px;
+        width: ${({ wide }) => (wide ? "85px" : "")};
+        height: 22px;
+        margin-bottom: 1rem;
+    }
 
     @media (min-width: 52em) {
         width: 46px;

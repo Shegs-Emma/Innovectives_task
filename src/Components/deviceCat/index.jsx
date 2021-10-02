@@ -49,7 +49,7 @@ const DeviceCategory = () => {
                         </Span>
                     </SpanCate>
                 </Categories>
-                <Button dev clicked={routeChange}> <FiChevronLeft className="back" size="1.2rem" /> Go Back </Button>
+                <Button dev clicked={routeChange}> <FiChevronLeft className="back" size="1rem" /> Go Back </Button>
 
                 <DeviceSelect>
                     <H2 sel>Select Device Category</H2>

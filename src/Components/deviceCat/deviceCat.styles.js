@@ -36,7 +36,12 @@ const DeviceSelect = styled.div`
     flex-direction: column;
     margin: 3rem 0;
 
-    @media (min-width: 52em) {
+    @media (min-width: 52em) and (max-width: 72em){
+        width: 90%;
+        padding-left: 2rem;
+    }
+
+    @media (min-width: 72.063em) {
         width: 63%;
         padding-left: 2rem;
     }
@@ -62,14 +67,23 @@ const Device = styled.div`
 const Triangle = styled.div`
     position: absolute;
     z-index: 43;
-    bottom: 11rem;
-    margin-left: 2rem;
+    bottom: 19.8rem;
+    margin-left: 1rem;
 
     width: 0;
 	height: 0;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
 	border-top: 20px solid #ffffff;
+
+    @media (max-width: 23.438em) {
+        bottom: 15.8rem;
+    }
+
+    @media (min-width: 52em) {
+        bottom: 11rem;
+        margin-left: 2rem;
+    }
 `;
 
 export {
