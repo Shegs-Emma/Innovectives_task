@@ -4,7 +4,7 @@ import {
     DashNav,
     DashB
 } from "../Landing/Layout.styles";
-import Dashnav from "../../Components/dashnav";
+import Dashnav from "../../Components/navigation/dashnav";
 import PurchaseItem from "../../Components/purchaseItem";
 
 const Purchased = () => {

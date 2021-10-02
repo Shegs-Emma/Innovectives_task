@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../dashboard/button";
+import Button from "../../ui/button";
 import { useHistory } from "react-router-dom";
 import { 
     TableCont,

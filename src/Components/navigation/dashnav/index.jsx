@@ -12,8 +12,8 @@ import {
 } from "./dashnav.styles";
 import {
     AnyRow
-} from "../shared";
-import { P, Span } from "../typography";
+} from "../../ui/shared";
+import { P, Span } from "../../ui/typography";
 
 
 const Dashboard = ({ landing }) => {

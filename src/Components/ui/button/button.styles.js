@@ -34,7 +34,8 @@ const ButtonContain = styled.button`
         height: 35px;
         width: ${({ dev, sub }) => (dev || sub ? "100px" : "")};
         width: ${({ pur }) => (pur ? "50px" : "")};
-        font-size: ${({ dev }) => (dev ? "smaller" : "")};
+        font-size: ${({ dev }) => (dev ? "x-small" : "")};
+        padding-top: ${({ dev }) => (dev ? "0.7rem" : "")};
         width: ${({ bac }) => (bac ? "52px" : "")};
     }
 

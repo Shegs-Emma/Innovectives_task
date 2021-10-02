@@ -11,11 +11,10 @@ import {
     Device,
     Triangle
 } from "./deviceCat.styles";
-import Navbar from "../navbar";
+import Navbar from "../navigation/navbar";
 import Tabler from "./table";
-import { Span } from "../typography";
-import Button from "../dashboard/button";
-import { H2 } from "../typography";
+import { Span, H2 } from "../ui/typography";
+import Button from "../ui/button";
 
 const DeviceCategory = () => {
     const [isShowing, setIsShowing] = useState(false);
@@ -49,7 +48,7 @@ const DeviceCategory = () => {
                         </Span>
                     </SpanCate>
                 </Categories>
-                <Button dev clicked={routeChange}> <FiChevronLeft className="back" size="1rem" /> Go Back </Button>
+                <Button dev clicked={routeChange}> <FiChevronLeft className="back" size="0.7rem" /> Go Back </Button>
 
                 <DeviceSelect>
                     <H2 sel>Select Device Category</H2>

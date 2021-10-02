@@ -4,7 +4,7 @@ import {
     DashNav,
     DashB
 } from "./Layout.styles";
-import Dashnav from "../../Components/dashnav";
+import Dashnav from "../../Components/navigation/dashnav";
 import Dashboard from "../../Components/dashboard";
 
 

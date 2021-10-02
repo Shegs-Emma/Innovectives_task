@@ -7,14 +7,13 @@ import {
     Categories,
     SpanCate,
 } from "../deviceCat/deviceCat.styles";
-import { H2 } from "../typography";
+import { H2, Span } from "../ui/typography";
 import {
     MobileLoan,
     PurchaseButtons
 } from "./purchaseItem.styles";
-import Navbar from "../navbar";
-import { Span } from "../typography";
-import Button from "../dashboard/button";
+import Navbar from "../navigation/navbar";
+import Button from "../ui/button";
 
 const PurchaseItem = () => {
 
@@ -47,7 +46,7 @@ const PurchaseItem = () => {
                         </Span>
                     </SpanCate>
                 </Categories>
-                <Button dev clicked={routeChange}> <FiChevronLeft className="back" size="1rem" /> Go Back </Button>
+                <Button dev clicked={routeChange}> <FiChevronLeft className="back" size="0.7rem" /> Go Back </Button>
 
                 <MobileLoan>
                     <H2 selD>Mobile Device Loan - Samsung Galaxy Note 9</H2>
