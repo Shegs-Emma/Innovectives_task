@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiPhoneCall, FiChevronDown } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Span } from "../typography";
+import { Span } from "../../ui/typography";
 import {
     Nav,
     NavItems,
@@ -17,6 +17,10 @@ const Navbar = () => {
     const [ isViewing, setIsViewing ] = useState({ display: "none" });
     const [ isClicked, setIsClicked ] = useState(false);
 
+    const sideDrawerClosedHandler = () => {
+        setIsClicked(false);
+    }
+
     const handleClick = () => {
         setIsClicked(!isClicked);
     }
@@ -27,7 +31,11 @@ const Navbar = () => {
                     <Logo onClick={() => handleClick()}>
                         <GiHamburgerMenu size="1.5em" className="burger" />
                     </Logo>
-                    {isClicked && <Sidenav />}
+                    {isClicked && (
+                        <Sidenav
+                            open={isClicked} 
+                            closed={sideDrawerClosedHandler} />
+                    )}
                 <NavItems>
                     
                     <Support>

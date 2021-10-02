@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import Navbar from "../navbar";
+import Navbar from "../navigation/navbar";
 import {
     DashboardCont,
     DashBody,
@@ -13,10 +13,10 @@ import {
     EmptyRec,
     DevL
 } from "./dashboard.styles";
-import { New } from "../dashnav/dashnav.styles";
-import { H2, H3, P, Span } from "../typography";
-import { AnyRow } from "../shared";
-import Button from "./button";
+import { New } from "../navigation/dashnav/dashnav.styles";
+import { H2, H3, P, Span } from "../ui/typography";
+import { AnyRow } from "../ui/shared";
+import Button from "../ui/button";
 
 const Dashboard = () => {
     const history = useHistory();
